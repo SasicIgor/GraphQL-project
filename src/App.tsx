@@ -1,12 +1,15 @@
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import SearchForm from "./components/form/SearchForm";
+import UserProfile from "./components/user/UserProfile";
 
 const App = () => {
+  const [userName, setUserName] = useState("quincylarson");
   return (
-    <div>
-      <Button className="capitalize bg-slate-500">Click me</Button>
-    </div>
-  )
-}
+    <main className="mx-auto max-w-6xl px-8 py-20">
+      <SearchForm userName={userName} setUserName={setUserName} />
+      <UserProfile userName={userName} />
+    </main>
+  );
+};
 
-export default App
-
+export default App;
